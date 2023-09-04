@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 
-# 自作の会社情報ライブラリ
+# 自作の会社情報クラス
 from Company import Company
 
 # tkinterによるウィンドウの作成
@@ -165,6 +165,13 @@ entryWhat = ttk.Entry(
     frame1,
     textvariable=companyWhat)
 entryWhat.grid(row=14, column=1)
+
+# 出力ボタン
+button_export = ttk.Button(
+    frame1,
+    text='Export',
+    command=lambda: print("Button is pushed."))
+button_export.grid(row=15, column=0)
 
 # アプリケーションの実行
 root.mainloop()
