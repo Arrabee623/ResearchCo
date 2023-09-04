@@ -3,7 +3,7 @@ class Company:
     
     # コンストラクタ
     def __init__(self, name, form, industry_type, industry_group,
-                 listing, head_office, sales, income, recruits,
+                 listing, head_office, sales, income, deltaIncome, recruits,
                  employees, establish, salary, what):
         self.name = name    # 会社名
         self.form = form    # 会社形態
@@ -13,6 +13,7 @@ class Company:
         self.head_office = head_office  # 本社の位置
         self.sales = int(sales)  # 売上高
         self.income = int(income)    # 営業利益
+        self.deltaIncome = deltaIncome  # 営業利益の前年比増減
         self.recruits = int(recruits)    # 採用数
         self.employees = int(employees)  # 従業員
         self.establish = int(establish)  # 設立年
