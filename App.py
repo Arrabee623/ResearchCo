@@ -17,15 +17,14 @@ frame1.grid()
 # 会社名
 frameName = ttk.Frame(frame1, padding=10, relief="solid")
 labelName = ttk.Label(
-    frameName, 
+    frame1, 
     text='会社名')
 labelName.grid(row=0, column=0)
 companyName = StringVar()
 entryName = ttk.Entry(
-    frameName,
+    frame1,
     textvariable=companyName)
 entryName.grid(row=0, column=1)
-frameName.grid(row=0, column=0, columnspan=2)
 
 # 会社形態
 labelForm = ttk.Label(
@@ -89,6 +88,83 @@ entryHead_office = ttk.Entry(
     frame1,
     textvariable=companyHead_office)
 entryHead_office.grid(row=7, column=1)
+
+# 売上高
+labelSales = ttk.Label(
+    frame1,
+    text='売上高')
+labelSales.grid(row=8, column=0)
+companySales = StringVar()
+entrySales = ttk.Entry(
+    frame1,
+    textvariable=companySales)
+entrySales.grid(row=8, column=1)
+
+# 営業利益
+labelIncome = ttk.Label(
+    frame1,
+    text='営業利益')
+labelIncome.grid(row=9, column=0)
+companyIncome = StringVar()
+entryIncome = ttk.Entry(
+    frame1,
+    textvariable=companyIncome)
+entryIncome.grid(row=9, column=1)
+
+# 採用数
+labelRecruits = ttk.Label(
+    frame1,
+    text='採用数')
+labelRecruits.grid(row=10, column=0)
+companyRecruits = StringVar()
+entryRecruits = ttk.Entry(
+    frame1,
+    textvariable=companyRecruits)
+entryRecruits.grid(row=10, column=1)
+
+# 従業員数
+labelEmployees = ttk.Label(
+    frame1,
+    text='従業員数')
+labelEmployees.grid(row=11, column=0)
+companyEmployees = StringVar()
+entryEmployees = ttk.Entry(
+    frame1,
+    textvariable=companyEmployees)
+entryEmployees.grid(row=11, column=1)
+
+# 設立年
+labelEstablish = ttk.Label(
+    frame1,
+    text='設立年')
+labelEstablish.grid(row=12, column=0)
+companyEstablish = StringVar()
+entryEstablish = ttk.Entry(
+    frame1,
+    textvariable=companyEstablish)
+entryEstablish.grid(row=12, column=1)
+
+# 平均年収
+labelSalary = ttk.Label(
+    frame1,
+    text='平均年収')
+labelSalary.grid(row=13, column=0)
+companySalary = StringVar()
+entrySalary = ttk.Entry(
+    frame1,
+    textvariable=companySalary)
+entrySalary.grid(row=13, column=1)
+
+# 何をしている会社か
+labelWhat = ttk.Label(
+    frame1,
+    text='何をしている会社か')
+labelWhat.grid(row=14, column=0)
+companyWhat = StringVar()
+entryWhat = ttk.Entry(
+    frame1,
+    textvariable=companyWhat)
+entryWhat.grid(row=14, column=1)
 
 # アプリケーションの実行
 root.mainloop()
