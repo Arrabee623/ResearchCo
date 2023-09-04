@@ -124,55 +124,80 @@ entryIncome = ttk.Entry(
     frame2,
     textvariable=companyIncome,
     width=30)
-entryIncome.grid(row=2, column=1, pady=5, padx=10)
+entryIncome.grid(row=2, column=1, pady=(5, 0), padx=10)
+deltaIncome = ttk.Frame(frame2)
+deltaIncome.grid(row=3, column=0, columnspan=2, pady=(0, 5), sticky='W')
+labelDelta = ttk.Label(
+    deltaIncome,
+    text="前年と比較しておおむね(5%を基準に)")
+labelDelta.grid(row=0, column=0, columnspan=3, sticky='W')
+delta = StringVar()
+rbDelta1 = ttk.Radiobutton(
+    deltaIncome,
+    text='増えている',
+    value='増えている',
+    variable=delta)
+rbDelta2 = ttk.Radiobutton(
+    deltaIncome,
+    text='横ばい',
+    value='横ばい',
+    variable=delta)
+rbDelta3 = ttk.Radiobutton(
+    deltaIncome,
+    text='減っている',
+    value='減っている',
+    variable=delta)
+rbDelta1.grid(row=1, column=0)
+rbDelta2.grid(row=1, column=1)
+rbDelta3.grid(row=1, column=2)
 
 # 採用数
 labelRecruits = ttk.Label(
     frame2,
     text='採用数[人]')
-labelRecruits.grid(row=3, column=0, sticky='E')
+labelRecruits.grid(row=4, column=0, sticky='E')
 companyRecruits = StringVar()
 entryRecruits = ttk.Entry(
     frame2,
     textvariable=companyRecruits,
     width=30)
-entryRecruits.grid(row=3, column=1, pady=5, padx=10)
+entryRecruits.grid(row=4, column=1, pady=5, padx=10)
 
 # 従業員数
 labelEmployees = ttk.Label(
     frame2,
     text='従業員数[人]')
-labelEmployees.grid(row=4, column=0, sticky='E')
+labelEmployees.grid(row=5, column=0, sticky='E')
 companyEmployees = StringVar()
 entryEmployees = ttk.Entry(
     frame2,
     textvariable=companyEmployees,
     width=30)
-entryEmployees.grid(row=4, column=1, pady=5, padx=10)
+entryEmployees.grid(row=5, column=1, pady=5, padx=10)
 
 # 設立年
 labelEstablish = ttk.Label(
     frame2,
     text='設立年[年]')
-labelEstablish.grid(row=5, column=0, sticky='E')
+labelEstablish.grid(row=6, column=0, sticky='E')
 companyEstablish = StringVar()
 entryEstablish = ttk.Entry(
     frame2,
     textvariable=companyEstablish,
     width=30)
-entryEstablish.grid(row=5, column=1, pady=5, padx=10)
+entryEstablish.grid(row=6, column=1, pady=5, padx=10)
 
 # 平均年収
 labelSalary = ttk.Label(
     frame2,
     text='平均年収[万円]')
-labelSalary.grid(row=6, column=0, sticky='E')
+labelSalary.grid(row=7, column=0, sticky='E')
 companySalary = StringVar()
 entrySalary = ttk.Entry(
     frame2,
     textvariable=companySalary,
     width=30)
-entrySalary.grid(row=6, column=1, pady=5, padx=10)
+entrySalary.grid(row=7, column=1, pady=5, padx=10)
 
 # 何をしている会社か
 labelWhat = ttk.Label(
