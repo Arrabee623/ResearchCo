@@ -63,7 +63,7 @@ class Company:
     # ファイル出力を行う
     def exportHTML(self):
         # ファイルオープン
-        filename = 'companies' + self.name + '.html'
+        filename = 'companies/' + self.name + '.html'
         f = codecs.open(filename, 'w', 'UTF-8')
         
         # 出力文字列作成
