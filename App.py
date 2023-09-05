@@ -2,13 +2,13 @@
 from tkinter import *
 from tkinter import ttk, Text
 
-# 自作の会社情報クラス
-from Company import Company
+# export関数
+from Export import export
 
 # tkinterによるウィンドウの作成
 root = Tk()
 root.title('企業研究')
-root.geometry('620x560')
+root.geometry('620x600')
 
 # ウィジェットの作成
 frame = ttk.Frame(root, padding=10)
@@ -21,6 +21,8 @@ frame3 = ttk.Frame(frame, padding=10)
 frame3.grid(row=1, column=0, columnspan=2, sticky='W')
 frame4 = ttk.Frame(frame, padding=10)
 frame4.grid(row=2, column=0, columnspan=2)
+frame5 = ttk.Frame(frame)
+frame5.grid(row=3, column=0, columnspan=2)
 
 # 会社名
 labelName = ttk.Label(
@@ -82,7 +84,7 @@ labelListing.grid(row=5, column=0, pady=(5, 0), sticky='E')
 companyListing = StringVar()
 entryListing = ttk.Entry(
     frame1,
-    textvariable=companyGroup,
+    textvariable=companyListing,
     width=30)
 entryListing.grid(row=5, column=1, pady=(5, 0), padx=10)
 labelListingTip = ttk.Label(
@@ -217,8 +219,12 @@ entryWhat.grid(row=1, column=0, pady=5)
 button_export = ttk.Button(
     frame4,
     text='Export',
-    command=lambda: print("Button is pushed."))
+    command=lambda: export(companyName.get(),companyForm.get(),companyType.get(),companyGroup.get(),
+    companyListing.get(),companyHead_office.get(),companySales.get(),companyIncome.get(),
+    delta.get(),companyRecruits.get(),companyEmployees.get(),companyEstablish.get(),companySalary.get(),
+    entryWhat.get('1.0', 'end')))
 button_export.grid(row=0, column=0, pady=5)
 
 # アプリケーションの実行
 root.mainloop()
+    
