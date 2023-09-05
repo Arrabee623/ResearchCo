@@ -1,4 +1,4 @@
-import tkinter
+import codecs
 
 # 会社クラス
 class Company:
@@ -6,7 +6,7 @@ class Company:
     # コンストラクタ
     def __init__(self, name='N/A', form='N/A', industry_type='N/A', industry_group='N/A',
                  listing='N/A', head_office='N/A', sales=-1, income=-1, deltaIncome='N/A', recruits=-1,
-                 employees=-1, establish=-1, salary=-1, what=tkinter.Text()):
+                 employees=-1, establish=-1, salary=-1, what='N/A'):
         self.name = name    # 会社名
         self.form = form    # 会社形態
         self.industry_type = industry_type  # 業種
@@ -20,7 +20,7 @@ class Company:
         self.employees = int(employees)  # 従業員
         self.establish = int(establish)  # 設立年
         self.salary = int(salary)    # 平均年収
-        self.what = what.get("1.0", "end")    # 何をしている会社か(概要)
+        self.what = what    # 何をしている会社か(概要)
     
     # 特定のパラメータについて分類を行う
     def classification(self):
@@ -64,7 +64,7 @@ class Company:
     def exportHTML(self):
         # ファイルオープン
         filename = self.name + '.html'
-        f = open(filename, 'w')
+        f = codecs.open(filename, 'w', 'UTF-8')
         
         # 出力文字列作成
         htmlstr = f'''

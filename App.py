@@ -2,37 +2,8 @@
 from tkinter import *
 from tkinter import ttk, Text
 
-# 自作の会社情報クラス
-from Company import Company
-
-# ボタン押下時の処理
-def export():
-    # Companyインスタンスの作成
-    com = Company(
-        name=companyName.get(),
-        form=companyForm.get(),
-        industry_type=companyType.get(),
-        industry_group=companyGroup.get(),
-        listing=companyListing.get(),
-        head_office=companyHead_office.get(),
-        sales=companySales.get(),
-        income=companyIncome.get(),
-        deltaIncome=delta.get(),
-        recruits=companyRecruits.get(),
-        employees=companyEmployees.get(),
-        establish=companyEstablish.get(),
-        salary=companySalary.get(),
-        what=entryWhat)
-    
-    # 分類
-    com.classification()
-    
-    # ファイル出力
-    com.exportHTML()
-    
-    # メッセージの表示
-    labelMessage["text"] = 'ファイルを出力しました。'
-    
+# export関数
+from Export import export
 
 # tkinterによるウィンドウの作成
 root = Tk()
@@ -248,19 +219,12 @@ entryWhat.grid(row=1, column=0, pady=5)
 button_export = ttk.Button(
     frame4,
     text='Export',
-    command=lambda: export())
+    command=lambda: export(companyName.get(),companyForm.get(),companyType.get(),companyGroup.get(),
+    companyListing.get(),companyHead_office.get(),companySales.get(),companyIncome.get(),
+    delta.get(),companyRecruits.get(),companyEmployees.get(),companyEstablish.get(),companySalary.get(),
+    entryWhat.get('1.0', 'end')))
 button_export.grid(row=0, column=0, pady=5)
-
-# メッセージ用のラベル
-labelMessage = ttk.Label(
-    frame5,
-    text = '')
-labelMessage.grid()
 
 # アプリケーションの実行
 root.mainloop()
     
-
-
-
-
